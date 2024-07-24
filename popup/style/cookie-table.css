@@ -1,0 +1,84 @@
+cookie-table {
+	display: block;
+	width: 100vw;
+	overflow: auto;
+	scrollbar-width: thin;
+
+	&[hidden] {
+		display: none;
+	}
+}
+
+table {
+	--tbl-border: light-dark(hsl(0, 1%, 85%), hsl(0, 1%, 28%));
+	border-collapse: collapse;
+	box-shadow: var(--card);
+	background-color: light-dark(white, hsl(0, 0%, 18%));
+	width: 100%;
+
+	& td,
+	& th {
+		border: 1px solid var(--tbl-border);
+		text-align: left;
+		padding: 0.4em;
+		text-align: center;
+
+		&:last-child {
+			padding: 0;
+
+			& svg {
+				height: 1.2em;
+			}
+		}
+	}
+
+	& th:nth-child(5),
+	& th:nth-child(6),
+	& th:nth-child(7) {
+		font-size: small;
+	}
+
+	& tr:nth-child(even) {
+		background-color: light-dark(hsl(0, 0%, 90%), hsl(0, 0%, 24%));
+	}
+
+	& td:nth-child(3) {
+		position: relative;
+	}
+
+	& td:focus-within {
+		outline: var(--border);
+	}
+
+	& textarea,
+	& input[type="text"] {
+		field-sizing: content;
+		border: none;
+		font-size: 0.8rem;
+		background-color: inherit;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	& textarea {
+		min-width: 35ch;
+		max-width: 84ch;
+		height: 1lh;
+		scrollbar-width: none;
+		resize: none;
+
+		&:focus {
+			height: unset;
+		}
+	}
+
+	& input[type="text"] {
+		min-width: 10ch;
+	}
+
+	& input[type="checkbox"] {
+		scale: 1.2;
+	}
+}

@@ -1,0 +1,115 @@
+{
+	"extName": {
+		"message": "modifyCookie - advanced cookie editor",
+		"description": "Extension name"
+	},
+
+	"extDescription": {
+		"message": "Create,edit and delete Cookies for all domains. Import/export cookies in json,csv, netscape, header string format. Open source",
+		"description": "Extension description"
+	},
+
+	"name": {
+		"message": "Name",
+		"description": "Name"
+	},
+
+	"value": {
+		"message": "Value",
+		"description": "Value"
+	},
+
+	"expires_max_age": {
+		"message": "Expires/Max-age",
+		"description": "Expires/Max-age"
+	},
+
+	"httponly": {
+		"message": "HttpOnly",
+		"description": "HttpOnly"
+	},
+
+	"secure": {
+		"message": "Secure",
+		"description": "Secure"
+	},
+
+	"samesite": {
+		"message": "SameSite",
+		"description": "SameSite"
+	},
+
+	"all_domains": {
+		"message": "All domains",
+		"description": "All domains"
+	},
+
+	"search_cookies": {
+		"message": "Search cookies",
+		"description": "Search cookies"
+	},
+	"copy": {
+		"message": "Copy",
+		"description": "Copy"
+	},
+
+	"download": {
+		"message": "Download",
+		"description": "Download"
+	},
+
+	"upload_json_netscape_csv_file": {
+		"message": "Upload json, Netscape, CSV file",
+		"description": "Upload json, Netscape, CSV file"
+	},
+
+	"format": {
+		"message": "Format",
+		"description": "Format"
+	},
+
+	"current_tab": {
+		"message": "Current Tab",
+		"description": "Current Tab"
+	},
+
+	"all_tabs": {
+		"message": "All Tabs",
+		"description": "All Tabs"
+	},
+
+	"all_cookies": {
+		"message": "All Cookies",
+		"description": "All Cookies"
+	},
+
+	"report_bug": {
+		"message": "Report Bug",
+		"description": "Report Bug"
+	},
+
+	"just_one_click": {
+		"message": "Just one click",
+		"description": "Just one Click"
+	},
+
+	"sorry_something_went_wrong": {
+		"message": "Sorry, Something went wrong",
+		"description": "Sorry, Something went wrong"
+	},
+
+	"open_modifycookie_in": {
+		"message": "Open modifyCookie in",
+		"description": "Open modifyCookie in"
+	},
+
+	"popup_panel": {
+		"message": "Popup Panel",
+		"description": "Popup Panel"
+	},
+
+	"separate_popup_window": {
+		"message": "Separate Popup window",
+		"description": "Separate Popup window"
+	}
+}
