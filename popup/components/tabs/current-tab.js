@@ -3,8 +3,10 @@ import { FilterHeader } from "../cookies/filter-header.js";
 import { CookieTable } from "../cookies/cookie-table.js";
 import { Cookie } from "../../js/Cookie.js";
 // @ts-ignore
-import filterHeaderCss from "../../style/filter-header.css" assert { type: "css" };
-import cookieTableCss from "../../style/cookie-table.css" assert { type: "css" };
+import filterHeaderCss from "../../style/filter-header.css" with {
+	type: "css",
+};
+import cookieTableCss from "../../style/cookie-table.css" with { type: "css" };
 
 export class CurrentTab extends HTMLElement {
 	constructor() {
@@ -18,7 +20,9 @@ export class CurrentTab extends HTMLElement {
 		btn.textContent = "Read httpOnly cookies";
 		this.shadowRoot.appendChild(btn);
 		$on(btn, "click", async () => {
-			const granted = await chrome.permissions.request({ origins: ["<all_urls>"] });
+			const granted = await chrome.permissions.request({
+				origins: ["<all_urls>"],
+			});
 			granted ? this.connectedCallback() : notify("Permission denied");
 		});
 	}
@@ -37,9 +41,12 @@ export class CurrentTab extends HTMLElement {
 		const cookies = [];
 		for (let index = 0; index < urlCookies.length; index++) {
 			const cookieArr = urlCookies[index];
-			cookies.push(...cookieArr.map((cookie) => new Cookie(cookie, urls[index])));
+			cookies.push(
+				...cookieArr.map((cookie) => new Cookie(cookie, urls[index])),
+			);
 			const disabledCookies = (await getStore(urls[index]))[urls[index]];
-			if (disabledCookies && disabledCookies?.length !== 0) cookies.push(...Object.values(disabledCookies));
+			if (disabledCookies && disabledCookies?.length !== 0)
+				cookies.push(...Object.values(disabledCookies));
 		}
 
 		cookies.push(new Cookie(null, urls[0]));

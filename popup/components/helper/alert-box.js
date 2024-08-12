@@ -1,5 +1,5 @@
 // @ts-ignore
-import alertCss from "../../style/alert-box.css" assert { type: "css" };
+import alertCss from "../../style/alert-box.css" with { type: "css" };
 
 class AlertBox extends HTMLElement {
 	constructor() {
@@ -28,7 +28,9 @@ class AlertBox extends HTMLElement {
 		this.setAttribute("popover", "");
 		this.shadowRoot.innerHTML = this.render();
 		this.box = this.shadowRoot.firstElementChild;
-		this.box.lastElementChild.addEventListener("click", () => this.hidePopover());
+		this.box.lastElementChild.addEventListener("click", () =>
+			this.hidePopover(),
+		);
 	}
 }
 

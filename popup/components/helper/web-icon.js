@@ -1,4 +1,4 @@
-import icons from "/assets/icons.json" assert { type: "json" };
+import icons from "/assets/icons.json" with { type: "json" };
 
 export class WebIcon extends HTMLElement {
 	constructor(ico) {
@@ -7,12 +7,14 @@ export class WebIcon extends HTMLElement {
 	}
 
 	get checked() {
-		return this._internals.states.has("--checked");
+		return this._internals.states.has("checked");
 	}
 
 	set checked(flag) {
 		// @ts-ignore
-		flag ? this._internals.states.add("--checked") : this._internals.states.delete("--checked");
+		flag
+			? this._internals.states.add("checked")
+			: this._internals.states.delete("checked");
 	}
 
 	set ico(newIcon) {

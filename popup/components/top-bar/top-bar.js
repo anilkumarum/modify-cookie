@@ -1,7 +1,7 @@
 import "./export-cookie.js";
 import { html } from "../../js/om.compact.js";
 // @ts-ignore
-import topbarCss from "../../style/top-bar.css" assert { type: "css" };
+import topbarCss from "../../style/top-bar.css" with { type: "css" };
 
 export class TopBar extends HTMLElement {
 	constructor() {
@@ -21,11 +21,15 @@ export class TopBar extends HTMLElement {
 		location.hash = target.value;
 		if (target.value === "all-open-tabs" && !this.allTabs) {
 			const { AllOpenTabs } = await import("../tabs/all-open-tabs.js");
-			this.allTabs = this.nextElementSibling.firstElementChild.after(new AllOpenTabs());
+			this.allTabs = this.nextElementSibling.firstElementChild.after(
+				new AllOpenTabs(),
+			);
 			await new Promise((r) => setTimeout(r, 100));
 		} else if (target.value === "all-cookies" && !this.allCookies) {
 			const { AllCookies } = await import("../cookies/all-cookies.js");
-			this.allCookies = this.nextElementSibling.lastElementChild.after(new AllCookies());
+			this.allCookies = this.nextElementSibling.lastElementChild.after(
+				new AllCookies(),
+			);
 			await new Promise((r) => setTimeout(r, 100));
 		}
 
